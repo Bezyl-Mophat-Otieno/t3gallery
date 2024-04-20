@@ -5,6 +5,11 @@
 await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+    images: {
+        domains: ["images.unsplash.com", "utfs.io"],
+
+    },
+};
 
 export default config;
