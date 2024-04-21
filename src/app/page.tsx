@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { db } from "~/server/db";
+import { MyImages } from "~/server/queries";
 // import { SignedOut } from '@clerk/nextjs';
 // import { SignedIn } from '@clerk/nextjs';
 
@@ -10,10 +10,8 @@ import { db } from "~/server/db";
 
   export async  function RenderedImages () {
     
-
-  const images = await db.query.images.findMany({
-    orderBy: (model, order) => order.asc(model.id),
-  });
+  const images = await MyImages()
+  
     return (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
           {[...images,...images, ...images].flat().map((image) => (
