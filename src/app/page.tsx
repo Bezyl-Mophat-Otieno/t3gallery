@@ -2,6 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { db } from "~/server/db";
 
+// making the page dynamic from next js
+// export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const images = [
     "https://utfs.io/f/53c498e1-4451-4b79-a996-d02d1cc06543-fou6pp.E.png",
@@ -16,7 +19,6 @@ export default async function HomePage() {
   ));
 
   const posts = await db.query.posts.findMany();
-  console.log(posts)
 
 
 
